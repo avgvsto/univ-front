@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Universidad</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+        -->
+        <link rel="stylesheet" href="lib/flat-style/generated/jquery.mobile.flatui.min.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+        <script src="js/functions.js"></script>
+    </head>
+    <body>
+        <!-- PAGINA PRINCIPAL -->
+        <div data-role="page" id="index" data-theme="f">
+
+            <div data-role="header" id="index-header">
+                <h1>Universidad</h1>
+                <a href="#login" class="ui-btn-right" data-icon="user" data-transition="slide">Login</a>
+            </div>
+
+            <div data-role="content" role="main">
+                <h1>¡Bienvenido a nuestra nueva aplicación!</h1>
+                <fieldset class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a href="#unidades" data-role="button" data-iconpos="top" data-theme="c" data-icon="bullets">Carreras</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a href="#mapa" data-role="button" data-iconpos="top" data-theme="c" data-icon="location">Mapa</a>
+                    </div>
+                </fieldset>
+                <fieldset class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a href="#horarios" data-role="button" data-iconpos="top" data-theme="c" data-icon="clock">Horarios</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <a href="#login" data-role="button" data-iconpos="top" data-theme="c" data-icon="user" >Ingresar</a>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div data-role="footer" id="footerindex">
+                <h2>2014</h2>
+            </div>
+
+        </div>
+
+        <!-- LOGIN -->
+        <div id="login" data-role="page" data-title="Iniciar sesión" data-theme="f">
+
+            <div data-role="header">
+                <a data-icon="back" href="#index" data-role="button" data-transition="slide" data-direction="reverse">Atrás</a>
+                <h1>Iniciar sesión</h1>
+            </div>
+            
+            <div data-role="content">
+                <form id="login-form">
+                    <div data-role="fieldcontain">
+                        <input type="text" id="email" placeholder="Email" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <input type="password" id="password" placeholder="Contraseña" />
+                    </div>
+                    <fieldset class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a href="#pop-login-error" data-rel="popup" class="btn-ui" data-theme="b" data-role="button" data-icon="check" id="btn-login" >Ingresar</a>
+                        </div>
+                        <div class="ui-block-b">
+                            <a href="#register" data-theme="g" data-role="button" data-icon="plus" id="btn-to-register" data-transition="slideup">Registrarse</a>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div data-role="popup" id="pop-login-error" class="ui-content" data-theme="a">
+                <p>¡Por favor verifica tus datos de usuario!</p>
+            </div>
+
+        </div>
+
+        <!-- REGISTRO -->
+        <div id="register" data-role="page" data-title="Registrarse sesión" data-add-back-btn="true" data-back-btn-text="Volver" data-theme="f">
+            <div data-role="header" data-position="fixed">
+                <a data-icon="back" href="#login" data-role="button" data-transition="slideup" data-direction="reverse">Atrás</a>
+                <h1>Iniciar sesión</h1>
+            </div>
+            <div data-role="content">
+                <form>
+                    <div data-role="fieldcontain">
+                        <input type="text" id="real-name" placeholder="Nombre y apellido" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <input type="text" id="student-file" placeholder="Legajo" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <input type="text" id="email" placeholder="Email" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <input type="password" id="password" placeholder="Contraseña" />
+                    </div>
+
+                    <div data-role="fieldcontain">
+
+                        <a href="#" class="btn-ui" data-theme="b" data-role="button" data-icon="check" id="btn-register" >Listo</a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- FIN LOGIN -->
+
+        <!-- PAGINA UNIDADES -->
+        <div data-role="page" id="unidades" data-theme="f">
+
+            <div data-role="panel" id="cabezeraunidades" data-position="right" data-display="push"></div>
+
+            <div data-role="header">
+                <a data-icon="back" href="#index" data-role="button">Atrás</a>
+                <h1>Unidades Academicas</h1>
+                <a data-icon="user" href="#login" data-role="button">Ingresar</a>
+            </div>
+
+            <div data-role="content">
+                <ul data-role="listview" id="listaUnidades" data-inset="true"></ul>
+            </div>
+
+            <div data-role="footer" id="footerunidades">
+                <h2>2014</h2>
+            </div>
+
+        </div>
+        <!-- FIN PAGINA UNIDADES -->
+
+        <!-- PAGINA SERVICIO -->
+        <div data-role="page" id="services" data-theme="f">
+
+            <div data-role="panel" id="cabeceraservicios" data-position="right" data-display="push"></div>
+
+            <div data-role="header">
+                <a data-icon="back" href="#index" data-role="button">Atrás</a>
+                <h1>Servicios Online</h1>
+                <a data-icon="delete" href="#" id="btn-logout" data-role="button">Salir</a>
+            </div>
+
+            <div data-role="content">
+                
+                <div data-role="collapsible" data-theme="b" data-content-theme="b" data-collapsed="false">
+                    <h3>Usuario</h3>
+                    <fieldset class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <h2 id="user-name"></h2>
+                        </div>
+                        <div class="ui-block-b">
+                            <h2 id="user-file"></h2>
+                        </div>
+                    </fieldset>
+                </div>
+                 <div data-role="collapsible" data-theme="b" data-content-theme="b" data-collapsed="false">
+                    <h3>Servicios</h3>
+                     <ul data-role="listview" id="listaServicios" data-inset="true" data-theme="c">
+                        <li><a href="#situacion"><h5>Situacion Academica</h5></a></li>
+                        <li><a href="#coninscripcion"><h5>Consulto Inscripciones</h5></a></li>
+                        <li><a href="#inscripcion"><h5>Inscripcion a Mesas</h5></a></li>
+                        <li><a href="#fechamesas"><h5>Fecha Mesas</h5></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div data-role="footer" id="footerunidades">
+                <h2>2014</h2>
+            </div>
+
+        </div>
+        <!-- FIN SERVICIOS -->
+
+        <!-- PAGINA CARRERAS -->
+        <div data-role="page" id="carreras" data-theme="f">
+
+            <div data-role="panel" id="cabezeracarreras" data-position="right" data-display="push"></div>
+
+            <div data-role="header">
+                <a data-icon="back" href="#unidades" data-role="button">Atrás</a>
+                <h1>Carreras</h1>
+                <a data-icon="user" href="#login" data-role="button">Ingresar</a>
+            </div>
+
+            <div data-role="content">
+                <ul data-role="listview" id="listaCarreras" data-inset="true"></ul>
+            </div>
+
+            <div data-role="footer" id="footercarreras">
+                <h2>2014</h2>
+            </div>
+
+        </div>
+        <!-- FIN PAGINA CARRERAS -->
+
+        <!-- PAGINA PLAN DE ESTUDIO -->
+        <div data-role="page" id="materias" data-theme="f">
+
+            <div data-role="panel" id="cabezeraplan" data-position="right" data-display="push"></div>
+
+            <div data-role="header">
+                <a data-icon="back" href="#carreras" data-role="button">Atrás</a>
+                <h1>Materias</h1>
+                <a data-icon="user" href="#login" data-role="button">Ingresar</a>
+            </div>
+
+            <div data-role="content" role="main" >
+                <ul data-role="listview" id="listaMaterias" data-inset="true"></ul>
+            </div>
+
+            <div data-role="footer" id="footermaterias">
+                <h2>2014</h2>
+            </div>
+
+        </div>
+        <!-- FIN PAGINA PLAN DE ESTUDIO -->
+
+        <!-- PAGINA INFORMACION MATERIA -->
+        <div data-role="page" id="materia" data-theme="f">
+
+            <div data-role="panel" id="cabezeramateria" data-position="right" data-display="push"></div>
+
+            <div data-role="header">
+                <a data-icon="back" href="#materias" data-role="button">Atrás</a>
+                <h1>Uda App</h1>
+                <a data-icon="user" href="#login" data-role="button">Ingresar</a>
+            </div>
+
+            <div data-role="content" role="main">
+                <fieldset class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div data-corner="5px">
+                            <p id="nombre"></p>
+                            <p id="ano"></p>
+                            <p id="semestre"></p>
+                        </div>
+                    </div>
+                    <div class="ui-block-b"></div>
+                </fieldset>
+                <fieldset class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <a><h3>Correlativas de Cursado</h3></a>
+                        <ul data-role="listview" id="listaCorrelativasCursado" data-inset="true"></ul>
+                        <a><h3>Correlativas de Examen</h3></a>
+                        <ul data-role="listview" id="listaCorrelativasExamen" data-inset="true"></ul>
+                    </div>
+                    <div class="ui-block-b"></div>
+                </fieldset>
+            </div>
+
+            <div data-role="footer" id="footermateria">
+                <h2>2014</h2>
+            </div>
+
+        </div>
+        <!-- FIN PAGINA PLAN DE ESTUDIO -->
+    </body>
+</html>
